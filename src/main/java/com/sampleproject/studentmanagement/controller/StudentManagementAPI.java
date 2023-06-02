@@ -28,18 +28,21 @@ public class StudentManagementAPI {
         return studentManagementService.getAllStudent();
     }
 
+    //create student registration
     @PostMapping
     public String createStudent(@RequestBody Student student){
         studentManagementService.createStudent(student);
         return "Student Registration is Successfully Completed.";
     }
 
+    //update student
     @PutMapping
     public String updateStudent(@RequestBody Student student){
         studentManagementService.updateStudent(student);
         return "Student Details Successfully Updated.";
     }
 
+    //remove student
     @DeleteMapping("{studentNo}")
     public String deleteStudent(@PathVariable("studentNo") String studentNo){
         studentManagementService.deleteStudent(studentNo);
